@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestión de Matrículas</title>
+    <script src="../js/matricula.js" defer></script>
+    <link rel="stylesheet" href="../css/stylefor.css" />
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+        border: 1px solid #ddd;
+      }
+      th {
+        background-color: #4caf50;
+        color: white;
+      }
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      tr:hover {
+        background-color: #ddd;
+      }
+
+      #mensaje-exito {
+        display: none;
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #4caf50;
+        color: white;
+        border-radius: 5px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="form-container matriculas-container">
+      <h2>Gestión de Matrículas</h2>
+      <form id="form-matriculas">
+        <label for="id-matricula">Identificación de Matrícula:</label>
+        <input
+          type="text"
+          id="id-matricula"
+          placeholder="ID único de la matrícula"
+          required
+        /><br />
+
+        <label for="id-estudiante">Identificación del Estudiante:</label>
+        <select id="id-estudiante" required>
+          <option value="" disabled selected>
+            Seleccione un estudiante
+          </option></select
+        ><br />
+
+        <label for="codigo-programa">Código del Programa:</label>
+        <select id="codigo-programa" required>
+          <option value="" disabled selected>
+            Seleccione un programa
+          </option></select
+        ><br />
+
+        <label for="fecha-matricula">Fecha de Matrícula:</label>
+        <input type="date" id="fecha-matricula" required /><br />
+
+        <label for="estado">Estado de la Matrícula:</label>
+        <select id="estado" required>
+          <option value="" disabled selected>Seleccione el estado</option>
+          <option value="activa">Activa</option>
+          <option value="en proceso">En Proceso</option>
+          <option value="finalizada">Finalizada</option>
+          <option value="cancelada">Cancelada</option></select
+        ><br />
+
+        <button type="submit">Registrar Matrícula</button>
+      </form>
+
+      <div id="mensaje-exito">Matrícula registrada correctamente.</div>
+
+      <h3>Matrículas Registradas</h3>
+      <table id="tabla-matriculas">
+        <thead>
+          <tr>
+            <th>ID Matrícula</th>
+            <th>ID Estudiante</th>
+            <th>Código Programa</th>
+            <th>Fecha Matrícula</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </body>
+</html>
